@@ -1,45 +1,58 @@
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 
 import CustomButton from "../components/CustomButton";
-import React from "react";
+import Loader from "../components/Loader";
 import { containerStyle } from "../styles";
 
 const WelcomeImage = require("../../assets/img/welcome.jpg");
 
 const Welcome = () => {
+  const [isLoading, setIsLoading] = useState(true);
   return (
-    <ImageBackground
-      imageStyle={{ opacity: 0.7 }}
-      source={WelcomeImage}
-      style={[containerStyle.container, {}]}>
-      <Text
-        style={{
-          fontSize: 100,
-          fontWeight: "bold",
-          color: "black",
-          fontFamily: "Inter-Black",
-          backgroundColor: "yellow",
-          paddingHorizontal: 10,
-        }}>
-        NEWS
-      </Text>
-      <Text
-        style={{
-          fontSize: 45,
-          fontWeight: "bold",
-          color: "black",
-          fontFamily: "Inter-Black",
-          borderColor: "yellow",
-          borderWidth: 2,
-          padding: 12,
-        }}>
-        READER APP
-      </Text>
+    <>
+      {isLoading === false ? (
+        <ImageBackground
+          source={WelcomeImage}
+          style={[containerStyle.container, {}]}>
+          <View
+            style={{
+              flex: 4,
+              justifyContent: "center",
+              alignItems: "center",
+            }}>
+            <Text
+              style={{
+                fontSize: 40,
+                fontWeight: "bold",
+                color: "black",
+                backgroundColor: "yellow",
+                paddingHorizontal: 10,
+              }}>
+              CURRENCY
+            </Text>
+            <Text
+              style={{
+                fontSize: 25,
+                fontWeight: "bold",
+                color: "#fff",
+                borderColor: "yellow",
+                borderWidth: 2,
+                padding: 12,
+                width: 233,
+              }}>
+              CONVERTER
+            </Text>
+          </View>
 
-      <View style={{ marginTop: 200 }}>
-        <CustomButton title={"Get Started"}></CustomButton>
-      </View>
-    </ImageBackground>
+          <View style={{ flex: 1, justifyContent: "center" }}>
+            <CustomButton title={"Get Started"}></CustomButton>
+          </View>
+        </ImageBackground>
+      ) : (
+        <Loader />
+      )}
+    </>
   );
 };
 

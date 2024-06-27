@@ -6,7 +6,5 @@ export const containerStyle = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  backgroundImageOpecity: {
-    opacity: 0.5,
-  },
+
 });
