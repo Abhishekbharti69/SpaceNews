@@ -29,7 +29,7 @@ const Welcome = () => {
                 backgroundColor: "yellow",
                 paddingHorizontal: 10,
               }}>
-              CURRENCY
+              SPACE
             </Text>
             <Text
               style={{
@@ -41,7 +41,7 @@ const Welcome = () => {
                 padding: 12,
                 width: 233,
               }}>
-              CONVERTER
+              NEWS
             </Text>
           </View>
 
