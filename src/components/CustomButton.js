@@ -9,11 +9,11 @@ const CustomButton = ({ title }) => {
         style={{
           width: 300,
           height: 50,
-          backgroundColor: "yellow",
+          backgroundColor: "#1a86b4",
           justifyContent: "center",
           borderRadius: 20,
         }}>
-        <Text style={{ textAlign: "center", fontWeight: "bold" }}>{title}</Text>
+        <Text style={{ textAlign: "center", fontWeight: "bold" , color:"yellow"}}>{title}</Text>
       </TouchableOpacity>
     </View>
   );

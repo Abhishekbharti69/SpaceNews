@@ -5,13 +5,13 @@ import CustomButton from "../components/CustomButton";
 import Loader from "../components/Loader";
 import { containerStyle } from "../styles";
 
-const WelcomeImage = require("../../assets/img/welcome.jpg");
+const WelcomeImage = require("../../assets/img/HD-wallpaper-among-the-stars-among-m-a-visuals-alone-astronaut-astronomy-blue-cosmos-earth-is-nasa-planet-space-stars-sun-universe-thumbnail.jpg");
 
 const Welcome = () => {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <>
-      {isLoading === false ? (
+      {isLoading === true ? (
         <ImageBackground
           source={WelcomeImage}
           style={[containerStyle.container, {}]}>
@@ -23,23 +23,28 @@ const Welcome = () => {
             }}>
             <Text
               style={{
+                fontStyle: "italic",
                 fontSize: 40,
                 fontWeight: "bold",
                 color: "black",
-                backgroundColor: "yellow",
                 paddingHorizontal: 10,
+                paddingVertical:10,
+               
               }}>
               SPACE
             </Text>
             <Text
               style={{
+                fontStyle: "italic",
+                fontFamily:"Inter-black",
                 fontSize: 25,
                 fontWeight: "bold",
-                color: "#fff",
-                borderColor: "yellow",
-                borderWidth: 2,
+                color: "black",
+               
                 padding: 12,
-                width: 233,
+              
+
+                alignItems: "center",
               }}>
               NEWS
             </Text>
