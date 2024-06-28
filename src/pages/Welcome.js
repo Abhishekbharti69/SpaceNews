@@ -14,7 +14,7 @@ const Welcome = () => {
       {isLoading === true ? (
         <ImageBackground
           source={WelcomeImage}
-          style={[containerStyle.container, {}]}>
+          style={[containerStyle.container, { width: "100%", height: "100%" }]}>
           <View
             style={{
               flex: 4,
@@ -28,21 +28,19 @@ const Welcome = () => {
                 fontWeight: "bold",
                 color: "black",
                 paddingHorizontal: 10,
-                paddingVertical:10,
-               
+                paddingVertical: 10,
               }}>
               SPACE
             </Text>
             <Text
               style={{
                 fontStyle: "italic",
-                fontFamily:"Inter-black",
+                fontFamily: "Inter-black",
                 fontSize: 25,
                 fontWeight: "bold",
                 color: "black",
-               
+
                 padding: 12,
-              
 
                 alignItems: "center",
               }}>
