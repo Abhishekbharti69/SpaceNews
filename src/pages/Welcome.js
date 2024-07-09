@@ -7,7 +7,7 @@ import { containerStyle } from "../styles";
 
 const WelcomeImage = require("../../assets/img/HD-wallpaper-among-the-stars-among-m-a-visuals-alone-astronaut-astronomy-blue-cosmos-earth-is-nasa-planet-space-stars-sun-universe-thumbnail.jpg");
 
-const Welcome = () => {
+const Welcome = ({ navigation }) => {
   const [isLoading, setIsLoading] = useState(true);
   return (
     <>
@@ -35,13 +35,10 @@ const Welcome = () => {
             <Text
               style={{
                 fontStyle: "italic",
-                fontFamily: "Inter-black",
                 fontSize: 25,
                 fontWeight: "bold",
                 color: "black",
-
                 padding: 12,
-
                 alignItems: "center",
               }}>
               NEWS
@@ -49,7 +46,9 @@ const Welcome = () => {
           </View>
 
           <View style={{ flex: 1, justifyContent: "center" }}>
-            <CustomButton title={"Get Started"}></CustomButton>
+            <CustomButton
+              navigation={navigation}
+              title={"Get Started"}></CustomButton>
           </View>
         </ImageBackground>
       ) : (

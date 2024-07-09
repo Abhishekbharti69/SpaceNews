@@ -1,76 +1,57 @@
 import AnDesign from "react-native-vector-icons/AntDesign";
-
+import { COLORS } from "../../constants/Colors";
+import Details from "../../pages/Details";
+import { Entypo } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import Home from "../../pages/Home";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { NavigationContainer } from "@react-navigation/native";
+import Profile from "../../pages/ProfileScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { useState } from "react";
-import Details from "../../pages/Details";
-import Home from "../../pages/Home";
 
 const Tab = createMaterialBottomTabNavigator();
 
 const BottomTabNavigation = () => {
-  const [tabBackground, setTabBackground] = useState();
+  const [tabBackground, setTabBackground] = useState(COLORS.TAB_ACTIVE_COLOR);
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        activeColor="black"
-        inactiveColor="#3e2465"
-        barStyle={{
-          backgroundColor: tabBackground,
-        }}>
-        <Tab.Screen
-          name="Feed"
-          component={Home}
-          listeners={{
-            tabPress() {
-              setTabBackground("red");
-            },
-          }}
-          options={{
-            tabBarLabel: "Home",
-            tabBarIcon: ({ color }) => (
-              <AnDesign name="home" color={color} size={26} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Notifications"
-          component={Details}
-          listeners={{
-            tabPress() {
-              setTabBackground("pink");
-            },
-          }}
-          options={{
-            tabBarLabel: "Updates",
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons
-                onPre
-                name="bell"
-                color={color}
-                size={26}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={Home}
-          listeners={{
-            tabPress() {
-              setTabBackground("green");
-            },
-          }}
-          options={{
-            tabBarLabel: "Profile",
-            tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="account" color={color} size={26} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator
+      activeColor={COLORS.TAB_ACTIVE_COLOR}
+      inactiveColor={"white"}
+      barStyle={{
+        backgroundColor: COLORS.TAB_UNACTIVE_COLOR,
+      }}>
+      <Tab.Screen
+        name="Feed"
+        component={Home}
+        options={{
+          tabBarLabel: "News",
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="newspaper-o" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={Details}
+        options={{
+          tabBarLabel: "Favorites",
+          tabBarIcon: ({ color }) => (
+            <Entypo name="star-outlined" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="account" color={color} size={26} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 
