@@ -9,6 +9,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Profile from "../../pages/ProfileScreen";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import { useState } from "react";
+import { MaterialIcons } from "@expo/vector-icons";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -27,7 +28,7 @@ const BottomTabNavigation = () => {
         options={{
           tabBarLabel: "News",
           tabBarIcon: ({ color }) => (
-            <FontAwesome name="newspaper-o" color={color} size={26} />
+            <MaterialIcons name="local-movies" color={color} size={26} />
           ),
         }}
       />
